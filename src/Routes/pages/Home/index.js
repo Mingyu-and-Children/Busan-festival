@@ -1,7 +1,7 @@
 import React from "react";
 
-const RootRoute = () => {
+const Home = () => {
   return <div></div>;
 };
 
-export default RootRoute;
+export default Home;

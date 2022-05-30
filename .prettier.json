@@ -1,0 +1,10 @@
+{
+  "prettier.trailingComma": "es5",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 80,
+  "prettier.semi": true,
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

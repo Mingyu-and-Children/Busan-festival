@@ -1,7 +1,3 @@
-import React from "react";
+import AboutContainer from "./AboutContainer";
 
-const About = () => {
-  return <div></div>;
-};
-
-export default About;
+export default AboutContainer;

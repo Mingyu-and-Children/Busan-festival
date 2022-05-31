@@ -1,4 +1,6 @@
+import './App.css';
 import RootRoute from "./Routes";
+
 
 function App() {
   return <RootRoute />;

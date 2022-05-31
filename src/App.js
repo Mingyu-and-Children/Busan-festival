@@ -1,8 +1,7 @@
-import "./App.css";
-import HeaderLayout from "./Components/HeaderLayout";
+import RootRoute from "./Routes";
 
 function App() {
-  return <HeaderLayout />;
+  return <RootRoute />;
 }
 
 export default App;

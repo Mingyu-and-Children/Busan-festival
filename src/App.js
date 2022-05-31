@@ -1,7 +1,8 @@
-import RootRoute from "./Routes";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  return <RootRoute />;
+  return <div></div>;
 }
 
 export default App;

@@ -1,34 +1,39 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
+import React from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import "./HeaderLayout.css";
 
-function LinkTab(props) {
+const HeaderLayout = () => {
+  const { pathname } = useLocation();
   return (
-    <Tab
-      component="a"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
+    <div className="home-layout-container">
+      <div className="left">
+        <div className="logo">
+          <div className="logo-container">민규와 아이들 LOGO</div>
+          <div className="logo-desc">BUSAN FESTIVAL</div>
+        </div>
+        <div className="menu-container">
+          <Link to="/" className={`menu-item ${pathname === "/" && "active"}`}>
+            HOME
+          </Link>
+          <Link
+            to="/about"
+            className={`menu-item ${pathname === "/about" && "active"}`}
+          >
+            ABOUT
+          </Link>
+          <Link
+            to="/festival"
+            className={`menu-item ${pathname === "/festival" && "active"}`}
+          >
+            FESTIVAL
+          </Link>
+        </div>
+      </div>
+      <div className="right">
+        <Outlet />
+      </div>
+    </div>
   );
-}
+};
 
-export default function NavTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <Box sx={{ width: "100%" }}>
-      <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
-        <LinkTab label="HOME" href="/" />
-        <LinkTab label="ABOUT" href="/about" />
-        <LinkTab label="FESTIVAL" href="/festival" />
-      </Tabs>
-    </Box>
-  );
-}
+export default HeaderLayout;

@@ -3,7 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+<<<<<<< Updated upstream
 import { BrowserRouter as Router } from "react-router-dom";
+=======
+>>>>>>> Stashed changes
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HeaderLayout from "./Components/HeaderLayout";
 
 function App() {
-  return <div></div>;
+  return <HeaderLayout />;
 }
 
 export default App;

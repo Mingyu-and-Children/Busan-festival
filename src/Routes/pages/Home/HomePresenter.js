@@ -1,7 +1,12 @@
 import React from "react";
+import { AutoSlide } from "./Components";
 
 const HomePresenter = () => {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      <AutoSlide />
+    </div>
+  );
 };
 
 export default HomePresenter;

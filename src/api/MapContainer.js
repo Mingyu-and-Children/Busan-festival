@@ -1,102 +1,72 @@
 import React, { useEffect, useState, useRef } from 'react';
+import data from './Data.json';
 
 const { kakao } = window;
 
 const MapContainer = () => {
   const [myMap, setMap] = useState(null);
-  const mapRef = useRef();
-  const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    const container = document.getElementById('myMap');
+    const container = document.getElementById('MyMap');
     const options = {
       center: new kakao.maps.LatLng(35.17281793748335, 129.13076811451697),
       level: 3,
     };
     const kakaoMap = new kakao.maps.Map(container, options);
 
-    useEffect(() => {
-      setPositions(clusterPositionsData.positions);
-    }, []);
-
-    // 마커가 표시될 위치
-    const markerPosition = new kakao.maps.LatLng(
-      35.17281793748335,
-      129.13076811451697,
-    );
-
-    // 마커생성
-    const marker = new kakao.maps.Marker({
-      position: markerPosition,
-    });
-    marker.setMap(kakaoMap);
-
-    const iwContent = '<div>센텀벤처타운</div>', // 인포윈도우에 표출될 내용
-      iwPosition = new kakao.maps.LatLng(35.17281793748335, 129.13076811451697); //인포윈도우 표시 위치
-
-    // 인포윈도우를 생성
-    const infowindow = new kakao.maps.InfoWindow({
-      position: iwPosition,
-      content: iwContent,
+    const map = new kakao.maps.Map(document.getElementById('map'), {
+      level: 14, // 지도의 확대 레벨
     });
 
-    // 마커 위에 인포윈도우를 표시
-    infowindow.open(kakaoMap, marker);
+    // // 마커 클러스터러를 생성합니다
+    const clusterer = new kakao.maps.MarkerClusterer({
+      map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
+      averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+      minLevel: 10, // 클러스터 할 최소 지도 레벨
+    });
+
+    // 마커들을 저장할 변수 생성(마커 클러스터러 관련)
+    var markers = [];
+    for (var i = 0; i < data.length; i++) {
+      // 지도에 마커를 생성하고 표시한다.
+      var marker = new kakao.maps.Marker({
+        position: new kakao.maps.LatLng(data.lat[i][0], data.lng[i][1]), // 마커의 좌표
+        map: map, // 마커를 표시할 지도 객체
+      });
+      // 생성된 마커를 마커 저장하는 변수에 넣음(마커 클러스터러 관련)
+      markers.push(marker);
+    }
+
+    // const markers = data.positions.map(function (position) {
+    //   return new kakao.maps.Marker({
+    //     position: new kakao.maps.LatLng(position.lat, position.lng),
+    //   });
+    // });
+
+    //클러스터러에 마커들을 추가합니다
+    clusterer.addMarkers(markers);
+
+    // // 마커가 표시될 위치
+    // const markerPosition = new kakao.maps.LatLng(
+    //   35.17281793748335,
+    //   129.13076811451697,
+    // );
+
+    // // 마커생성
+    // const marker = new kakao.maps.Marker({
+    //   position: markerPosition,
+    // });
+    // marker.setMap(kakaoMap);
   }, []);
 
-  const onClusterclick = (_target, cluster) => {
-    const map = mapRef.current;
-    // 현재 지도 레벨에서 1레벨 확대한 레벨
-    const level = map.getLevel() - 1;
-
-    // 지도를 클릭된 클러스터의 마커의 위치를 기준으로 확대합니다
-    map.setLevel(level, { anchor: cluster.getCenter() });
-  };
-
   return (
-    <>
-      <div
-        id="myMap"
-        style={{
-          width: '500px',
-          height: '500px',
-        }}
-      ></div>
-      <Map // 지도를 표시할 Container
-        center={{
-          // 지도의 중심좌표
-          lat: 36.2683,
-          lng: 127.6358,
-        }}
-        style={{
-          // 지도의 크기
-          width: '100%',
-          height: '450px',
-        }}
-        level={14} // 지도의 확대 레벨
-        ref={mapRef}
-      >
-        <MarkerClusterer
-          averageCenter={true} // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
-          minLevel={10} // 클러스터 할 최소 지도 레벨
-          disableClickZoom={true} // 클러스터 마커를 클릭했을 때 지도가 확대되지 않도록 설정한다
-          // 마커 클러스터러에 클릭이벤트를 등록합니다
-          // 마커 클러스터러를 생성할 때 disableClickZoom을 true로 설정하지 않은 경우
-          // 이벤트 헨들러로 cluster 객체가 넘어오지 않을 수도 있습니다
-          onClusterclick={onClusterclick}
-        >
-          {positions.map((pos) => (
-            <MapMarker
-              key={`${pos.lat}-${pos.lng}`}
-              position={{
-                lat: pos.lat,
-                lng: pos.lng,
-              }}
-            />
-          ))}
-        </MarkerClusterer>
-      </Map>
-    </>
+    <div
+      id="MyMap"
+      style={{
+        width: '500px',
+        height: '500px',
+      }}
+    ></div>
   );
 };
 

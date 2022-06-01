@@ -51,7 +51,7 @@ const FestivalCard = ({ festivals }) => {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                {festival.SUBTITLE}
+                {festival.TITLE}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {festival.ITEMCNTNTS}

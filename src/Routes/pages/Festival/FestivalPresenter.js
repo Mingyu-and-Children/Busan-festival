@@ -4,9 +4,7 @@ import { FestivalCard, FestivalLayout } from './components';
 const FestivalPresenter = ({ festivals }) => {
   return (
     <>
-      <FestivalLayout>
-        <FestivalCard festivals={festivals} />
-      </FestivalLayout>
+      <FestivalCard festivals={festivals} />
     </>
   );
 };

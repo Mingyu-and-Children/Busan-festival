@@ -34,6 +34,9 @@ const HeaderLayout = () => {
           </nav>
         </div>
       </header>
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 };

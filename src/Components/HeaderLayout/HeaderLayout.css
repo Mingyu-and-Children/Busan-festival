@@ -22,9 +22,10 @@
   flex: 1;
   height: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .home-layout-container .left .logo {

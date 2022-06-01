@@ -5,33 +5,35 @@ import './HeaderLayout.css';
 const HeaderLayout = () => {
   const { pathname } = useLocation();
   return (
-    <div className="home-layout-container">
-      <div className="left">
-        <div className="logo">
-          <div className="logo-container">민규와 아이들 LOGO</div>
-          <div className="logo-desc">BUSAN FESTIVAL</div>
+    <div className="page">
+      {/* header */}
+      <header className="header">
+        <div className="header_inner">
+          <h1>부산축제정보</h1>
+          <nav className="menu_container">
+            <ul className="menu">
+              <Link
+                to="/"
+                className={`top_menu ${pathname === '/' && 'active'}`}
+              >
+                HOME
+              </Link>
+              <Link
+                to="/festival"
+                className={`top_menu ${pathname === '/festival' && 'active'}`}
+              >
+                FESTIVAL
+              </Link>
+              <Link
+                to="/about"
+                className={`top_menu ${pathname === '/about' && 'active'}`}
+              >
+                ABOUT
+              </Link>
+            </ul>
+          </nav>
         </div>
-        <div className="menu-container">
-          <Link to="/" className={`menu-item ${pathname === '/' && 'active'}`}>
-            HOME
-          </Link>
-          <Link
-            to="/festival"
-            className={`menu-item ${pathname === '/festival' && 'active'}`}
-          >
-            FESTIVAL
-          </Link>
-          <Link
-            to="/about"
-            className={`menu-item ${pathname === '/about' && 'active'}`}
-          >
-            ABOUT
-          </Link>
-        </div>
-      </div>
-      <div className="right">
-        <Outlet />
-      </div>
+      </header>
     </div>
   );
 };

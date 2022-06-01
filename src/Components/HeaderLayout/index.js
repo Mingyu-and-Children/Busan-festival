@@ -1,6 +1,6 @@
-import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import "./HeaderLayout.css";
+import React from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import './HeaderLayout.css';
 
 const HeaderLayout = () => {
   const { pathname } = useLocation();
@@ -12,20 +12,20 @@ const HeaderLayout = () => {
           <div className="logo-desc">BUSAN FESTIVAL</div>
         </div>
         <div className="menu-container">
-          <Link to="/" className={`menu-item ${pathname === "/" && "active"}`}>
+          <Link to="/" className={`menu-item ${pathname === '/' && 'active'}`}>
             HOME
           </Link>
           <Link
-            to="/about"
-            className={`menu-item ${pathname === "/about" && "active"}`}
-          >
-            ABOUT
-          </Link>
-          <Link
             to="/festival"
-            className={`menu-item ${pathname === "/festival" && "active"}`}
+            className={`menu-item ${pathname === '/festival' && 'active'}`}
           >
             FESTIVAL
+          </Link>
+          <Link
+            to="/about"
+            className={`menu-item ${pathname === '/about' && 'active'}`}
+          >
+            ABOUT
           </Link>
         </div>
       </div>

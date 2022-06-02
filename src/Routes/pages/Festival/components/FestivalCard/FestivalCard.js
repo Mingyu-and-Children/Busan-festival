@@ -54,7 +54,7 @@ const FestivalCard = ({ festivals }) => {
                 {festival.TITLE}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {festival.ITEMCNTNTS}
+                {festival.GUGUN_NM}
               </Typography>
             </CardContent>
           </CardActionArea>

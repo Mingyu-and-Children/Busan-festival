@@ -5,6 +5,11 @@ const { kakao } = window;
 
 const MapContainer = () => {
   const festivals = getFestivalData();
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    setData(festivals);
+  }, []);
 
   useEffect(() => {
     const container = document.getElementById('map');

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+.detailed_body {
+  margin: 0;
+  padding: 0;
+}
+
+.main_image_container {
+  width: 95vw;
+  /* height: 45vh; */
+  background-color: #eee;
+  margin: 0 auto;
+}
+
+.info_container {
+  height: 36.7vh;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  /* background-color: #333; */
+}
+
+.sub_image_container {
+  width: 350px;
+  height: 350px;
+  background-color: #999;
+}
+
+.sub_image_container img {
+  width: 350px;
+  height: 350px;
+}
+
+.sub_info_container {
+  background-color: #eee;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5em;
+}
+.sub_info_container > ul {
+  width: 95vw;
+  height: 15vh;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub_info_container > ul > li {
+  list-style: none;
+}
+
+.footer_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.footer_container .find_way_container {
+  width: 700px;
+  height: 450px;
+  background-color: #999;
+}
+
+.footer_container .find_way_items {
+  width: 450px;
+  height: 450px;
+  background-color: #999;
+  margin-left: 70px;
+}

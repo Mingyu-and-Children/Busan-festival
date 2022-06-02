@@ -1,8 +1,13 @@
 import React from 'react';
 import './FestivalLayout.css';
+import FestivalCard from '../FestivalCard';
 
 const FestivalLayout = () => {
-  return <div>여기가 레이아웃</div>;
+  return (
+    <FestivalLayout>
+      <FestivalCard></FestivalCard>
+    </FestivalLayout>
+  );
 };
 
 export default FestivalLayout;

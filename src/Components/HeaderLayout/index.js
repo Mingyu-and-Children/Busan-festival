@@ -34,7 +34,7 @@ const HeaderLayout = () => {
           </nav>
         </div>
       </header>
-      <div>
+      <div className="content">
         <Outlet />
       </div>
     </div>

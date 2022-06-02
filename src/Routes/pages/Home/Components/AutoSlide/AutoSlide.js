@@ -79,7 +79,7 @@
 
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import autoBind from 'auto-bind';
+// import autoBind from 'auto-bind';
 import './styles.css';
 
 import {
@@ -207,7 +207,7 @@ class BannerExample extends React.Component {
       cycleNavigation: true,
     };
 
-    autoBind(this);
+    // autoBind(this);
   }
 
   toggleAutoPlay() {

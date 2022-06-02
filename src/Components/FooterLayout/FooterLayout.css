@@ -1,0 +1,38 @@
+.Footerdesign {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 30px 0;
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+.teamName {
+  float: left;
+  font-size: 22px;
+  padding-left: 30px;
+}
+
+.member {
+  float: left;
+  font-size: 12px;
+  padding-left: 30px;
+}
+.leader {
+  padding-left: 10px;
+  float: left;
+  font-size: 12px;
+}
+
+.address {
+  padding-left: 30px;
+  float: left;
+  font-size: 12px;
+  color: white;
+}

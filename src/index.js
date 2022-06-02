@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import MapContainer from './api/MapContainer';
+import { HomeLayout } from './Routes/pages/Home/Components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    {/* <App /> */}
-    <MapContainer />
+    <App />
+    {/* <HomeLayout /> */}
   </Router>,
 );
 

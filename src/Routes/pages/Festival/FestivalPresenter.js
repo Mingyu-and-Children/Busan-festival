@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import { FestivalCard, FestivalLayout } from './components';
 
-const FestivalPresenter = () => {
-  return <div>Festival Page</div>;
+const FestivalPresenter = ({ festivals }) => {
+  return (
+    <>
+      <FestivalCard festivals={festivals} />
+    </>
+  );
 };
 
 export default FestivalPresenter;

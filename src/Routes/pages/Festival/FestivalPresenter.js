@@ -1,5 +1,5 @@
 import React from 'react';
-import { FestivalCard, FestivalLayout } from './components';
+import { FestivalCard } from './components';
 
 const FestivalPresenter = ({ festivals }) => {
   return (

@@ -4,7 +4,7 @@ import { FestivalDetailedLayout } from './components';
 const FestivalDetailedPresenter = () => {
   return (
     <>
-      <FestivalDetailedLayout></FestivalDetailedLayout>
+      <FestivalDetailedLayout />
     </>
   );
 };

@@ -10,8 +10,9 @@ const RootRoute = () => {
         <Route index element={<Home />} />
         <Route path="/festival" element={<Festival />}>
           <Route index element={<Festival />} />
-          <Route path="/detailedPage" element={<FestivalDetailed />} />
+          <Route path=":festivalid" element={<FestivalDetailed />} />
         </Route>
+        <Route path="/festivalDetailed" element={<FestivalDetailed />} />
         <Route path="/about" element={<About />} />
       </Route>
     </Routes>

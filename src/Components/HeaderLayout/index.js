@@ -9,34 +9,45 @@ const HeaderLayout = () => {
       {/* header */}
       <header className="header">
         <div className="header_inner">
-          <h1>부산축제정보</h1>
+          <Link to="/" className="logo_container">
+            <h1>부산축제정보</h1>
+          </Link>
           <nav className="menu_container">
             <ul className="menu">
               <Link
                 to="/"
                 className={`top_menu ${pathname === '/' && 'active'}`}
               >
-                HOME
+                Home
               </Link>
               <Link
                 to="/festival"
                 className={`top_menu ${pathname === '/festival' && 'active'}`}
               >
-                FESTIVAL
+                Festival
+              </Link>
+              <Link
+                to="/festivalDetailed"
+                className={`top_menu ${
+                  pathname === '/festivalDetailed' && 'active'
+                }`}
+              >
+                FestivalDetailed
               </Link>
               <Link
                 to="/about"
                 className={`top_menu ${pathname === '/about' && 'active'}`}
               >
-                ABOUT
+                About
               </Link>
             </ul>
           </nav>
         </div>
       </header>
-      <div>
+      <div className="outlet_container">
         <Outlet />
       </div>
+      {/* <div className="footer-gasiki"></div> */}
     </div>
   );
 };

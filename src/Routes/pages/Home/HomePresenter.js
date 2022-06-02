@@ -1,14 +1,15 @@
 import React from 'react';
-import { MapContainer } from './Components';
+import { HomeLayout, MapContainer, FestivalList } from './Components';
 
 const HomePresenter = ({ festival }) => {
   // console.log(festival);
-  const { UC_SEQ, LAT, LNG } = festival;
+  const { UC_SEQ, LAT, LNG, TITLE } = festival;
   return (
     <>
       {/* <AutoSlide /> */}
-      <MapContainer key={UC_SEQ} LAT={LAT} LNG={LNG} />
-      {/* <Maptest key={UC_SEQ} LAT={LAT} LNG={LNG} /> */}
+      {/* <MapContainer key={UC_SEQ} LAT={LAT} LNG={LNG} /> */}
+      {/* <HomeLayout /> */}
+      <FestivalList TITLE={TITLE} />
     </>
   );
 };

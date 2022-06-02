@@ -1,11 +1,13 @@
 import React from 'react';
-import { MapContainer, AutoSlide } from './Components';
+import { MapContainer, AutoSlide, HomeLayout } from './Components';
+import useFestival from '../../../Hooks/useFestival';
 
-const HomePresenter = ({ festivalData }) => {
+const HomePresenter = () => {
+  const festivals = useFestival();
+  console.log(festivals);
   return (
     <>
-      <AutoSlide festivalData={festivalData} />
-      <MapContainer festivalData={festivalData} />
+      <HomeLayout festivals={festivals} />
     </>
   );
 };

@@ -12,7 +12,6 @@ const RootRoute = () => {
           <Route index element={<Festival />} />
           <Route path=":festivalId" element={<FestivalDetailed />} />
         </Route>
-        {/* <Route path="/festivalDetailed" element={<FestivalDetailed />} /> */}
         <Route path="/about" element={<About />} />
       </Route>
     </Routes>

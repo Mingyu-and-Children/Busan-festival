@@ -14,7 +14,7 @@ const MapContainer = () => {
   useEffect(() => {
     const container = document.getElementById('map');
     const options = {
-      center: new kakao.maps.LatLng(35.17281793748335, 129.13076811451697),
+      center: new kakao.maps.LatLng(35.19494041207048, 129.0044483531791),
       level: 9,
     };
 
@@ -49,8 +49,8 @@ const MapContainer = () => {
     <div
       id="map"
       style={{
-        width: '500px',
-        height: '500px',
+        width: '100%',
+        height: '100%',
       }}
     ></div>
   );

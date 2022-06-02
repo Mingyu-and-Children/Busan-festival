@@ -2,7 +2,7 @@ import * as React from 'react';
 import './FestivalDetailed.css';
 import useFestival from '../../../../../Hooks/useFestival';
 import { useParams } from 'react-router-dom';
-// import FestivalMap from '../FestivalMap';
+import FestivalMap from '../FestivalMap';
 import { FooterLayout } from '../../../../../Components';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -20,17 +20,8 @@ const FestivalDetailed = () => {
 
   // console.log(temp);
 
-  // 무한 랜더링 발생....
-  // festivals.map((festival) => {
-  //   if (id == festival.UC_SEQ) {
-  //     temp = festival;
-  //     return temp;
-  //   }
-  //   console.log(temp);
-  // });
-  // console.log(location);
   const data = location.state.festival;
-  // console.log(data);
+  const { LAT, LNG } = data;
 
   return (
     <>
@@ -73,7 +64,9 @@ const FestivalDetailed = () => {
           </ul>
         </div>
         <div className="footer_container">
-          <div className="find_way_container">{/* <FestivalMap /> */}</div>
+          <div className="find_way_container">
+            <FestivalMap Lat={LAT} Lng={LNG} />
+          </div>
           <div className="find_way_items">장소</div>
         </div>
       </div>

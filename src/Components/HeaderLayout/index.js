@@ -47,7 +47,6 @@ const HeaderLayout = () => {
       <div>
         <Outlet />
       </div>
-      {/* <div className="footer-gasiki"></div> */}
     </div>
   );
 };

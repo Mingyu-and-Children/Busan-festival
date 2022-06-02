@@ -1,144 +1,36 @@
-// import * as React from 'react';
-// import Grid from '@mui/material/Grid';
-// import { Paper, Button } from '@mui/material';
-// import Carousel from 'react-material-ui-carousel';
-
-// const AutoSlide = () => {
-//   var items = [
-//     {
-//       name: 'Random Name #1',
-//       description: 'Probably the most random thing you have ever seen!',
-//     },
-//     {
-//       name: 'Random Name #2',
-//       description: 'Hello World!',
-//     },
-//   ];
-
-//   const Item = (props) => {
-//     return (
-//       <Paper>
-//         <h2>{props.item.name}</h2>
-//         <p>{props.item.description}</p>
-//         <Button className="CheckButton">Check it out!</Button>{' '}
-//       </Paper>
-//     );
-//   };
-
-//   return (
-//     <Grid sx={{ flexGrow: 1 }} container spacing={0}>
-//       <Grid>
-//         <Grid sx={{ display: 'flex' }}>
-//           <Paper
-//             sx={{
-//               height: '50vh',
-//               width: '100vw',
-//             }}
-//           >
-//             <Carousel
-
-//             >
-//               {/* {items.map((item, i) => (
-//                 <Item key={i} item={item} />
-//               ))} */}
-//             </Carousel>
-//           </Paper>
-//           {/* <Paper
-//             sx={{
-//               height: '50vh',
-//               width: '27.5vw',
-//             }}
-//           ></Paper>
-//           <Paper
-//             sx={{
-//               height: '50vh',
-//               width: '27.5vw',
-//             }}
-//           ></Paper> */}
-//         </Grid>
-//         <Grid style={{ display: 'flex' }}>
-//           {[0, 1].map((value) => (
-//             <Grid key={value} item>
-//               <Paper
-//                 sx={{
-//                   height: '50vh',
-//                   width: '41vw',
-//                   backgroundColor: (theme) =>
-//                     theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//                 }}
-//               />
-//             </Grid>
-//           ))}
-//         </Grid>
-//       </Grid>
-//     </Grid>
-//   );
-// };
-
-// export default AutoSlide;
-
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-// import autoBind from 'auto-bind';
+import autoBind from 'auto-bind';
 import './styles.css';
 
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Grid,
-  Button,
-} from '@material-ui/core';
+import { Card, CardMedia, Grid } from '@material-ui/core';
 
 function Banner(props) {
-  if (props.newProp) console.log(props.newProp);
-  const contentPosition = props.contentPosition
-    ? props.contentPosition
-    : 'left';
   const totalItems = props.length ? props.length : 3;
-  const mediaLength = totalItems - 1;
+  const mediaLength = totalItems + 1;
 
   let items = [];
-  const content = (
-    <Grid item xs={12 / totalItems} key="content">
-      <CardContent className="Content">
-        <Typography className="Title">{props.item.Name}</Typography>
-
-        <Typography className="Caption">{props.item.Caption}</Typography>
-
-        <Button variant="outlined" className="ViewButton">
-          View Now
-        </Button>
-      </CardContent>
-    </Grid>
-  );
+  const content = <Grid item xs={12 / totalItems} key="content"></Grid>;
 
   for (let i = 0; i < mediaLength; i++) {
     const item = props.item.Items[i];
 
     const media = (
-      <Grid item xs={12 / totalItems} key={item.Name}>
-        <CardMedia className="Media" image={item.Image} title={item.Name}>
-          <Typography className="MediaCaption">{item.Name}</Typography>
-        </CardMedia>
+      <Grid item xs={9 / totalItems} key={item.Name}>
+        <CardMedia
+          className="Media"
+          image={item.Image}
+          title={item.Name}
+        ></CardMedia>
       </Grid>
     );
 
     items.push(media);
   }
 
-  if (contentPosition === 'left') {
-    items.unshift(content);
-  } else if (contentPosition === 'right') {
-    items.push(content);
-  } else if (contentPosition === 'middle') {
-    items.splice(items.length / 2, 0, content);
-  }
-
   return (
     <Card raised className="Banner">
-      <Grid container spacing={0} className="BannerGrid">
+      <Grid container className="BannerGrid">
         {items}
       </Grid>
     </Card>
@@ -147,17 +39,30 @@ function Banner(props) {
 
 const items = [
   {
-    Name: 'Pizza begin',
-    Image: 'https://source.unsplash.com/featured/?macbook',
+    Name: '축제의 바다 속으로',
+    Image:
+      'https://www.visitbusan.net/uploadImgs/files/cntnts/20191213191711585_ttiel',
     contentPosition: 'left',
     Items: [
       {
-        Name: 'Macbook Pro',
-        Image: 'https://source.unsplash.com/featured/?macbook',
+        Name: '축제의 바다 속으로',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191213191711585_ttiel',
       },
       {
-        Name: 'iPhone',
-        Image: 'https://source.unsplash.com/featured/?iphone',
+        Name: '태종대에서 만난 오색찬란 수국의 매력',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191222160520749_ttiel',
+      },
+      {
+        Name: '문화로 노닐다 금정산성축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191227115551778_ttiel',
+      },
+      {
+        Name: '기장 봄바다의 맛 기장미역다시마축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191231114635471_ttiel',
       },
     ],
   },
@@ -167,12 +72,24 @@ const items = [
     contentPosition: 'middle',
     Items: [
       {
-        Name: 'Washing Machine WX9102',
-        Image: 'https://source.unsplash.com/featured/?washingmachine',
+        Name: '구포나루의 추억과 낭만 낙동강구포나루축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191227120157384_ttiel',
       },
       {
-        Name: 'Learus Vacuum Cleaner',
-        Image: 'https://source.unsplash.com/featured/?vacuum,cleaner',
+        Name: '아름다운 부산 밤하늘의 하모니, 부산불꽃축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191230180157336_ttiel',
+      },
+      {
+        Name: '오색찬란 연등터널 삼광사 연등축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191230190338310_ttiel',
+      },
+      {
+        Name: '해운대 밤바다를 낭만으로 물들이는 해운대빛축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191231112440678_ttiel',
       },
     ],
   },
@@ -182,109 +99,58 @@ const items = [
     contentPosition: 'right',
     Items: [
       {
-        Name: 'Living Room Lamp',
-        Image: 'https://source.unsplash.com/featured/?lamp',
+        Name: '골목 분위기 제대로 즐기는 부산원도심골목길축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191230190825680_ttiel',
       },
       {
-        Name: 'Floral Vase',
-        Image: 'https://source.unsplash.com/featured/?vase',
+        Name: '모래의 변신은 예술, 해운대모래축제를 가다',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191230191444996_ttiel',
+      },
+      {
+        Name: '해양에 대한 모든 것, 부산항축제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191230191940029_ttiel',
+      },
+      {
+        Name: '다대포 바다를 물들이는 예술의 향기, 부산바다미술제',
+        Image:
+          'https://www.visitbusan.net/uploadImgs/files/cntnts/20191231095147364_ttiel',
       },
     ],
   },
 ];
 
-class BannerExample extends React.Component {
+class AutoSlide extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       autoPlay: true,
       animation: 'fade',
-      indicators: true,
       timeout: 500,
       navButtonsAlwaysVisible: false,
       navButtonsAlwaysInvisible: false,
       cycleNavigation: true,
+      indicators: false,
     };
 
-    // autoBind(this);
-  }
-
-  toggleAutoPlay() {
-    this.setState({
-      autoPlay: !this.state.autoPlay,
-    });
-  }
-
-  toggleIndicators() {
-    this.setState({
-      indicators: !this.state.indicators,
-    });
-  }
-
-  toggleNavButtonsAlwaysVisible() {
-    this.setState({
-      navButtonsAlwaysVisible: !this.state.navButtonsAlwaysVisible,
-    });
-  }
-
-  toggleNavButtonsAlwaysInvisible() {
-    this.setState({
-      navButtonsAlwaysInvisible: !this.state.navButtonsAlwaysInvisible,
-    });
-  }
-
-  toggleCycleNavigation() {
-    this.setState({
-      cycleNavigation: !this.state.cycleNavigation,
-    });
-  }
-
-  changeAnimation(event) {
-    this.setState({
-      animation: event.target.value,
-    });
-  }
-
-  changeTimeout(event, value) {
-    this.setState({
-      timeout: value,
-    });
+    autoBind(this);
   }
 
   render() {
     return (
-      <div style={{ marginTop: '50px', color: '#494949' }}>
-        <h2>3 Items layout - StackOverflow - Yotam</h2>
+      <div style={{ color: '#494949', width: '100%' }}>
         <Carousel
           className="Example"
           autoPlay={this.state.autoPlay}
-          animation={this.state.animation}
           indicators={this.state.indicators}
+          animation={this.state.animation}
           timeout={this.state.timeout}
           cycleNavigation={this.state.cycleNavigation}
           navButtonsAlwaysVisible={this.state.navButtonsAlwaysVisible}
           navButtonsAlwaysInvisible={this.state.navButtonsAlwaysInvisible}
-          next={(now, previous) =>
-            console.log(
-              `Next User Callback: Now displaying child${now}. Previously displayed child${previous}`,
-            )
-          }
-          prev={(now, previous) =>
-            console.log(
-              `Prev User Callback: Now displaying child${now}. Previously displayed child${previous}`,
-            )
-          }
-          onChange={(now, previous) =>
-            console.log(
-              `OnChange User Callback: Now displaying child${now}. Previously displayed child${previous}`,
-            )
-          }
-          // fullHeightHover={false}
-          // navButtonsProps={{style: {backgroundColor: 'cornflowerblue', borderRadius: 0}}}
-          // navButtonsWrapperProps={{style: {bottom: '0', top: 'unset', }}}
-          // indicatorContainerProps={{style: {margin: "20px"}}}
-          // NextIcon='next'
         >
           {items.map((item, index) => {
             return (
@@ -301,4 +167,4 @@ class BannerExample extends React.Component {
   }
 }
 
-export default BannerExample;
+export default AutoSlide;

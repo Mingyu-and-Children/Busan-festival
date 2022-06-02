@@ -6,12 +6,15 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './FestivalCard.css';
 import { Link } from 'react-router-dom';
+import { FooterLayout } from '../../../../../Components';
+import useFestival from '../../../../../Hooks/useFestival';
 
-const FestivalCard = ({ festivals }) => {
-  console.log(festivals);
+const FestivalCard = () => {
+  const festivals = useFestival();
+  // console.log(festivals);
   return (
     <>
-      <div className="main">
+      <div>
         <img
           src="https://bto.or.kr/attach/IMAGE/PopupMgr/PopupZoneUpload/2022/1/bddH6YtFbRc8xlSc.PNG"
           style={{ width: '100%', height: '100%' }}
@@ -21,32 +24,14 @@ const FestivalCard = ({ festivals }) => {
         <h2>축제 리스트 ({festivals.length}건)</h2>
       </div>
       <div className="festival_body">
-        {/* {[0, 1, 2, 3].map((value) => (
-        <Card key={value} sx={{ maxWidth: 345, margin: '10px' }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      ))} */}
         {festivals.map((festival) => (
           <Link
             to={`${festival.UC_SEQ}`}
-            style={{ textDecoration: 'none' }}
+            state={{
+              festival: festival,
+            }}
             key={festival.UC_SEQ}
+            style={{ textDecoration: 'none' }}
           >
             <Card
               sx={{
@@ -87,8 +72,10 @@ const FestivalCard = ({ festivals }) => {
           </Link>
         ))}
       </div>
+
+      <FooterLayout />
     </>
   );
 };
 
-export default FestivalCard;
+export default React.memo(FestivalCard);

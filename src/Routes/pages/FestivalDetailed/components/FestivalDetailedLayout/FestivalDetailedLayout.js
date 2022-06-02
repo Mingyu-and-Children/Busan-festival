@@ -5,4 +5,4 @@ const FestivalDetailedLayout = () => {
   return <FestivalDetailed />;
 };
 
-export default FestivalDetailedLayout;
+export default React.memo(FestivalDetailedLayout);

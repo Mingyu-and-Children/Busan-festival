@@ -1,15 +1,13 @@
 import React from 'react';
-import { HomeLayout, MapContainer, FestivalList } from './Components';
+import { MapContainer, AutoSlide, HomeLayout } from './Components';
+import useFestival from '../../../Hooks/useFestival';
 
-const HomePresenter = ({ festival }) => {
-  // console.log(festival);
-  const { UC_SEQ, LAT, LNG, TITLE } = festival;
+const HomePresenter = () => {
+  const festivals = useFestival();
+  console.log(festivals);
   return (
     <>
-      {/* <AutoSlide /> */}
-      {/* <MapContainer key={UC_SEQ} LAT={LAT} LNG={LNG} /> */}
-      {/* <HomeLayout /> */}
-      <FestivalList TITLE={TITLE} />
+      <HomeLayout festivals={festivals} />
     </>
   );
 };

@@ -3,6 +3,7 @@ import './FestivalDetailed.css';
 import useFestival from '../../../../../Hooks/useFestival';
 import { useParams } from 'react-router-dom';
 import FestivalMap from '../FestivalMap';
+import { MapContainer } from '../../../Home/Components';
 
 const FestivalDetailed = () => {
   const festivals = useFestival();
@@ -61,7 +62,9 @@ const FestivalDetailed = () => {
           </ul>
         </div>
         <div className="footer_container">
-          <div className="find_way_container">{/* <FestivalMap /> */}</div>
+          <div className="find_way_container">
+            <FestivalMap Lat={temp.LAT} Lng={temp.LNG} />
+          </div>
           <div className="find_way_items">장소</div>
         </div>
       </div>

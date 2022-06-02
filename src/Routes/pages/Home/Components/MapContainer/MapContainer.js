@@ -3,14 +3,13 @@ import { getFestivalData } from '../../../../../api';
 
 const { kakao } = window;
 
-const Maptest = () => {
+const MapContainer = () => {
   const festivals = getFestivalData();
   const [data, setData] = useState({});
 
   useEffect(() => {
     setData(festivals);
   }, []);
-  //   console.log(data);
 
   useEffect(() => {
     const container = document.getElementById('map');
@@ -57,4 +56,4 @@ const Maptest = () => {
   );
 };
 
-export default Maptest;
+export default MapContainer;

@@ -18,24 +18,24 @@ class GridData extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
-        <Grid container spacing={3}>
+      //   <div className={classes.root}>
+      <Grid container spacing={3} sx={{ p: 5 }}>
+        {/* <Grid item xs={12} />
           <Grid item xs={12} />
           <Grid item xs={12} />
           <Grid item xs={12} />
-          <Grid item xs={12} />
-          <Grid item xs={12} />
-          <Grid item xs={12}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
+          <Grid item xs={12} /> */}
+        <Grid item xs={12}>
+          <Paper className={classes.paper}></Paper>
         </Grid>
-      </div>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}></Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}></Paper>
+        </Grid>
+      </Grid>
+      //   </div>
     );
   }
 }

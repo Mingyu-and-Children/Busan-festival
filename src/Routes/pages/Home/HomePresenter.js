@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapContainer } from './Components';
+import { HomeLayout, MapContainer } from './Components';
 
 const HomePresenter = ({ festival }) => {
   // console.log(festival);
@@ -7,7 +7,8 @@ const HomePresenter = ({ festival }) => {
   return (
     <>
       {/* <AutoSlide /> */}
-      <MapContainer key={UC_SEQ} LAT={LAT} LNG={LNG} />
+      {/* <MapContainer key={UC_SEQ} LAT={LAT} LNG={LNG} /> */}
+      <HomeLayout />
       {/* <Maptest key={UC_SEQ} LAT={LAT} LNG={LNG} /> */}
     </>
   );

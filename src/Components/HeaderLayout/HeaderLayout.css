@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   width: 100%;
   background-color: white;
@@ -39,3 +45,9 @@
 .menu_container .menu .top_menu:hover {
   color: #007aff;
 }
+
+/* .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

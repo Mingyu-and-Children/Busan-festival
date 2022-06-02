@@ -8,7 +8,7 @@ import { FooterLayout } from '../../../../../Components';
 
 const styles = (theme) => ({
   root: {
-    margin: '13vh',
+    margin: '15vh 7vw 0 7vw',
   },
   paper: {
     height: '42.85vh',

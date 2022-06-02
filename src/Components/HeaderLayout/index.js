@@ -26,14 +26,14 @@ const HeaderLayout = () => {
               >
                 Festival
               </Link>
-              <Link
+              {/* <Link
                 to="/festivalDetailed"
                 className={`top_menu ${
                   pathname === '/festivalDetailed' && 'active'
                 }`}
               >
                 FestivalDetailed
-              </Link>
+              </Link> */}
               <Link
                 to="/about"
                 className={`top_menu ${pathname === '/about' && 'active'}`}
@@ -44,7 +44,7 @@ const HeaderLayout = () => {
           </nav>
         </div>
       </header>
-      <div className="outlet_container">
+      <div>
         <Outlet />
       </div>
       {/* <div className="footer-gasiki"></div> */}

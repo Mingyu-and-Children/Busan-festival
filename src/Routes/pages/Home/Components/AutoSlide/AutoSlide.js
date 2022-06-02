@@ -10,7 +10,7 @@ function Banner(props) {
   const mediaLength = totalItems + 1;
 
   let items = [];
-  const content = <Grid item xs={12 / totalItems} key="content"></Grid>;
+  <Grid item xs={12 / totalItems} key="content"></Grid>;
 
   for (let i = 0; i < mediaLength; i++) {
     const item = props.item.Items[i];

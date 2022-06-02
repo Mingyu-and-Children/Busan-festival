@@ -18,6 +18,7 @@ const FestivalCard = () => {
         <img
           src="https://bto.or.kr/attach/IMAGE/PopupMgr/PopupZoneUpload/2022/1/bddH6YtFbRc8xlSc.PNG"
           style={{ width: '100%', height: '100%' }}
+          alt="festival"
         />
       </div>
       <div className="festival_list">

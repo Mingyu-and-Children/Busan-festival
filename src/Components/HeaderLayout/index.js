@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import './HeaderLayout.css';
+import logo from '../../asset/logo.png';
 
 const HeaderLayout = () => {
   const { pathname } = useLocation();
@@ -10,7 +11,8 @@ const HeaderLayout = () => {
       <header className="header">
         <div className="header_inner">
           <Link to="/" className="logo_container">
-            <h1>부산축제정보</h1>
+            {/* <h1>부산축제정보</h1> */}
+            <img src={logo} alt="logo" width={120} />
           </Link>
           <nav className="menu_container">
             <ul className="menu">

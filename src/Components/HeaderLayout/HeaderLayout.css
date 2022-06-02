@@ -10,9 +10,9 @@
 }
 
 .header_inner {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
-  height: 6rem;
+  height: 7rem;
   position: relative;
   display: flex;
   justify-content: space-between;

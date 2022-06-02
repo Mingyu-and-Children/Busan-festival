@@ -1,11 +1,3 @@
-// import React from "react";
-
-// const AboutPresenter = () => {
-//   return <div>About Page</div>;
-// };
-
-// export default AboutPresenter;
-
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -16,10 +8,8 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import styled from 'styled-components';
-import { Grid, Item } from '@mui/material';
-import { grid } from '@mui/system';
 import PhotoContainer from './components/photoContainer';
-import FooterLayout from '../../../Components/FooterLayout/FooterLayout';
+import { FooterLayout } from '../../../Components';
 
 const BoxCotainer = styled.div`
   /* White */
@@ -155,7 +145,7 @@ export default function AboutPresenter() {
             </BoxCotainer>
           </Box>
         </Container>
-        <FooterLayout></FooterLayout>
+        <FooterLayout />
       </React.Fragment>
     </>
   );

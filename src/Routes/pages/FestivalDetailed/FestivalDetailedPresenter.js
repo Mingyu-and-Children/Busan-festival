@@ -1,7 +1,7 @@
 import React from 'react';
 import { FestivalDetailedLayout, FestivalMap } from './components';
 
-const FestivalDetailedPresenter = ({ festivals }) => {
+const FestivalDetailedPresenter = () => {
   return (
     <>
       <FestivalDetailedLayout />

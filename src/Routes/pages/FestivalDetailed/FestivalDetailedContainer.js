@@ -3,9 +3,9 @@ import FestivalDetailedPresenter from './FestivalDetailedPresenter';
 import { getFestivalData } from '../../../api';
 
 const FestivalDetailedContainer = () => {
-  // const festivals = getFestivalData();
+  const festivals = getFestivalData();
 
-  return <FestivalDetailedPresenter />;
+  return <FestivalDetailedPresenter festivals={festivals} />;
 };
 
 export default FestivalDetailedContainer;

@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
 .detailed_body {
-  height: 1000px;
   margin: 0;
   padding: 0;
 }
 
 .main_image_container {
   width: 95vw;
-  height: 45vh;
+  /* height: 45vh; */
   background-color: #eee;
   margin: 0 auto;
 }
@@ -25,11 +26,27 @@
   background-color: #999;
 }
 
+.sub_image_container img {
+  width: 350px;
+  height: 350px;
+}
+
 .sub_info_container {
-  width: 95vw;
-  height: 25vh;
   background-color: #eee;
-  margin: 0 auto;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5em;
+}
+.sub_info_container > ul {
+  width: 95vw;
+  height: 15vh;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub_info_container > ul > li {
+  list-style: none;
 }
 
 .footer_container {

@@ -1,38 +1,71 @@
 import * as React from 'react';
 import './FestivalDetailed.css';
+import useFestival from '../../../../../Hooks/useFestival';
+import { useParams } from 'react-router-dom';
+import FestivalMap from '../FestivalMap';
 
 const FestivalDetailed = () => {
+  const festivals = useFestival();
+  const params = useParams();
+  const id = params.festivalId;
+  let temp = {};
+
+  // console.log(festivals);
+  // console.log('id: ', id);
+  festivals.map((festival) => {
+    // console.log(festival.UC_SEQ);
+    if (id == festival.UC_SEQ) {
+      temp = festival;
+      return;
+    } else {
+      return;
+    }
+  });
+  console.log(temp);
+
   return (
     <>
+      <div className="main">
+        <img src="https://bto.or.kr/attach/IMAGE/UserMenu/SubVisauImg/2019/12/djc4nutiLyNrsbDv.JPG"></img>
+      </div>
       <div className="detailed_body">
-        <div className="main_image_container">메인이미지</div>
         <div className="info_container">
-          <div className="sub_image_container">서브이미지</div>
+          <div className="sub_image_container">
+            <img src={`${temp.MAIN_IMG_THUMB}`}></img>
+          </div>
           <div style={{ marginLeft: '60px' }}>
             <div>
-              <h1>태종대유원지</h1>
+              <h1>{temp.PLACE}</h1>
             </div>
             <div>
-              <p>다누비와 함께 떠나는 천혜의 절경 태종대 투어</p>
+              <p>{temp.SUBTITLE}</p>
             </div>
             <div style={{ maxWidth: '500px' }}>
-              <p>
-                태종대 입구에서 탈 수 있는 다누비 열차는 태종대 전체(태종대
-                전망대-영도등대-태종사)를 한 바퀴 순환해 중요 스폿을 안내합니다.
-                정류장마다 20분에 한 대씩 다음 열차가 도착하니 감상하고 싶은
-                구간에서 내려 편하게 감상하면 됩니다. 1976년 설립되어 매년 여름
-                수국축제로 큰 관심을 받는 태종사의 대웅전도 방문해보며 여유를
-                누려보세요.
+              <p
+                style={{
+                  display: '-webkit-box',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: '10',
+                }}
+              >
+                {temp.ITEMCNTNTS}
               </p>
             </div>
           </div>
         </div>
-        <div className="sub_info_container"></div>
+        <div className="sub_info_container">
+          <ul>
+            <li>축제기간 / {temp.USAGE_DAY_WEEK_AND_TIME}</li>
+          </ul>
+        </div>
         <div className="footer_container">
-          <div className="find_way_container">찾아오는길</div>
+          <div className="find_way_container">{/* <FestivalMap /> */}</div>
           <div className="find_way_items">장소</div>
         </div>
       </div>
+      ;
     </>
   );
 };

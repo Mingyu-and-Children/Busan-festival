@@ -30,6 +30,7 @@
 
 .menu_container {
   font-size: 1.2rem;
+  display: flex;
 }
 
 .menu_container .menu .top_menu {
@@ -46,6 +47,11 @@
   color: #007aff;
 }
 
+@media (max-width: 710px) {
+  .menu_container {
+    display: none;
+  }
+}
 /* .content {
   display: flex;
   justify-content: center;

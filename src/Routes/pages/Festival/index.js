@@ -1,3 +1,3 @@
-import FestivalContainer from "./FestivalContainer";
+import FestivalContainer from './FestivalContainer';
 
 export default FestivalContainer;

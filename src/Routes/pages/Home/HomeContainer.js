@@ -4,12 +4,11 @@ import useFestival from '../../../Hooks/useFestival';
 
 const HomeContainer = () => {
   const festivalData = useFestival();
+  console.log('bbb');
 
   return (
     <div>
-      {festivalData.map((festival) => (
-        <HomePresetner key={festival.UC_SEQ} festival={festival} />
-      ))}
+      <HomePresetner festivalData={festivalData} />
     </div>
   );
 };

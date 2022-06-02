@@ -1,13 +1,14 @@
 import React from 'react';
 import FestivalPresenter from './FestivalPresenter';
-import { getFestivalData } from '../../../api';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import useFestival from '../../../Hooks/useFestival';
 
 const FestivalContainer = () => {
-  const festivals = getFestivalData();
-
-  return <FestivalPresenter festivals={festivals} />;
+  const festivalData = useFestival();
+  return (
+    <div>
+      <FestivalPresenter festivalData={festivalData} />
+    </div>
+  );
 };
 
 export default FestivalContainer;

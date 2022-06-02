@@ -1,82 +1,3 @@
-// import * as React from 'react';
-// import Grid from '@mui/material/Grid';
-// import { Paper, Button } from '@mui/material';
-// import Carousel from 'react-material-ui-carousel';
-
-// const AutoSlide = () => {
-//   var items = [
-//     {
-//       name: 'Random Name #1',
-//       description: 'Probably the most random thing you have ever seen!',
-//     },
-//     {
-//       name: 'Random Name #2',
-//       description: 'Hello World!',
-//     },
-//   ];
-
-//   const Item = (props) => {
-//     return (
-//       <Paper>
-//         <h2>{props.item.name}</h2>
-//         <p>{props.item.description}</p>
-//         <Button className="CheckButton">Check it out!</Button>{' '}
-//       </Paper>
-//     );
-//   };
-
-//   return (
-//     <Grid sx={{ flexGrow: 1 }} container spacing={0}>
-//       <Grid>
-//         <Grid sx={{ display: 'flex' }}>
-//           <Paper
-//             sx={{
-//               height: '50vh',
-//               width: '100vw',
-//             }}
-//           >
-//             <Carousel
-
-//             >
-//               {/* {items.map((item, i) => (
-//                 <Item key={i} item={item} />
-//               ))} */}
-//             </Carousel>
-//           </Paper>
-//           {/* <Paper
-//             sx={{
-//               height: '50vh',
-//               width: '27.5vw',
-//             }}
-//           ></Paper>
-//           <Paper
-//             sx={{
-//               height: '50vh',
-//               width: '27.5vw',
-//             }}
-//           ></Paper> */}
-//         </Grid>
-//         <Grid style={{ display: 'flex' }}>
-//           {[0, 1].map((value) => (
-//             <Grid key={value} item>
-//               <Paper
-//                 sx={{
-//                   height: '50vh',
-//                   width: '41vw',
-//                   backgroundColor: (theme) =>
-//                     theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//                 }}
-//               />
-//             </Grid>
-//           ))}
-//         </Grid>
-//       </Grid>
-//     </Grid>
-//   );
-// };
-
-// export default AutoSlide;
-
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import autoBind from 'auto-bind';
@@ -193,7 +114,7 @@ const items = [
   },
 ];
 
-class BannerExample extends React.Component {
+class AutoSlide extends React.Component {
   constructor(props) {
     super(props);
 
@@ -254,32 +175,16 @@ class BannerExample extends React.Component {
 
   render() {
     return (
-      <div style={{ marginTop: '50px', color: '#494949' }}>
-        <h2>3 Items layout - StackOverflow - Yotam</h2>
+      <div style={{ marginTop: '150px', color: '#494949', width: '100%' }}>
         <Carousel
           className="Example"
           autoPlay={this.state.autoPlay}
           animation={this.state.animation}
-          indicators={this.state.indicators}
           timeout={this.state.timeout}
           cycleNavigation={this.state.cycleNavigation}
           navButtonsAlwaysVisible={this.state.navButtonsAlwaysVisible}
           navButtonsAlwaysInvisible={this.state.navButtonsAlwaysInvisible}
-          next={(now, previous) =>
-            console.log(
-              `Next User Callback: Now displaying child${now}. Previously displayed child${previous}`,
-            )
-          }
-          prev={(now, previous) =>
-            console.log(
-              `Prev User Callback: Now displaying child${now}. Previously displayed child${previous}`,
-            )
-          }
-          onChange={(now, previous) =>
-            console.log(
-              `OnChange User Callback: Now displaying child${now}. Previously displayed child${previous}`,
-            )
-          }
+
           // fullHeightHover={false}
           // navButtonsProps={{style: {backgroundColor: 'cornflowerblue', borderRadius: 0}}}
           // navButtonsWrapperProps={{style: {bottom: '0', top: 'unset', }}}
@@ -301,4 +206,4 @@ class BannerExample extends React.Component {
   }
 }
 
-export default BannerExample;
+export default AutoSlide;

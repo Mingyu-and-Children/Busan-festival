@@ -1,14 +1,11 @@
 import React from 'react';
-import { MapContainer } from './Components';
+import { MapContainer, AutoSlide } from './Components';
 
-const HomePresenter = ({ festival }) => {
-  // console.log(festival);
-  const { UC_SEQ, LAT, LNG } = festival;
+const HomePresenter = ({ festivalData }) => {
   return (
     <>
-      {/* <AutoSlide /> */}
-      <MapContainer key={UC_SEQ} LAT={LAT} LNG={LNG} />
-      {/* <Maptest key={UC_SEQ} LAT={LAT} LNG={LNG} /> */}
+      <AutoSlide festivalData={festivalData} />
+      <MapContainer festivalData={festivalData} />
     </>
   );
 };

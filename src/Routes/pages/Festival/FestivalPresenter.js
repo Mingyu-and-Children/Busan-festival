@@ -1,10 +1,11 @@
 import React from 'react';
-import { FestivalCard, FestivalLayout } from './components';
+import { FestivalCard } from './components';
 
-const FestivalPresenter = ({ festivals }) => {
+const FestivalPresenter = ({ festivalData }) => {
+  console.log(festivalData);
   return (
     <>
-      <FestivalCard festivals={festivals} />
+      <FestivalCard />
     </>
   );
 };

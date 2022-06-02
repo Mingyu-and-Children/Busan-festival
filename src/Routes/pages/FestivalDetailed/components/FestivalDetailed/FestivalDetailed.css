@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
+.festival_detailed_main {
+  width: 100vw;
+  height: 50vh;
+  background-color: #eee;
+  /* margin: 0 auto; */
+}
+
 .detailed_body {
   margin: 0;
   padding: 0;
-}
-
-.main {
-  width: 95%;
-  height: 100%;
-  background-color: #eee;
-  /* margin: 0 auto; */
 }
 
 .info_container {
@@ -32,10 +32,12 @@
 }
 
 .sub_info_container {
+  width: 100%;
   background-color: #eee;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.5em;
 }
+
 .sub_info_container > ul {
   width: 95vw;
   height: 15vh;

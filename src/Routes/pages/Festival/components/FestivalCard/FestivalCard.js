@@ -14,7 +14,7 @@ const FestivalCard = () => {
   // console.log(festivals);
   return (
     <>
-      <div className="main">
+      <div>
         <img
           src="https://bto.or.kr/attach/IMAGE/PopupMgr/PopupZoneUpload/2022/1/bddH6YtFbRc8xlSc.PNG"
           style={{ width: '100%', height: '100%' }}
@@ -72,6 +72,7 @@ const FestivalCard = () => {
           </Link>
         ))}
       </div>
+
       <FooterLayout />
     </>
   );

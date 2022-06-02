@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
-/* 
-.main {
+
+/* .festival_card_main {
   width: 95vw;
   height: 60vh;
   background-color: #eee;
@@ -17,8 +17,7 @@
 .festival_body {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: 'center';
-  width: 95vw;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 50px;
 }

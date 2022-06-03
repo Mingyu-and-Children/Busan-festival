@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
@@ -13,10 +13,11 @@ const FestivalMap = ({ Lat, Lng }) => {
     //지도생성
     const map = new kakao.maps.Map(container, options);
 
-    let marker = new kakao.maps.Marker({
+    new kakao.maps.Marker({
       position: new kakao.maps.LatLng(Lat, Lng),
       map: map,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div

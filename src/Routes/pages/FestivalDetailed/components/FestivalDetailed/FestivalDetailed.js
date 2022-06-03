@@ -5,6 +5,8 @@ import './FestivalDetailed.css';
 import FestivalMap from '../FestivalMap';
 import { FooterLayout } from '../../../../../Components';
 // import { useEffect, useState } from 'react';
+import FestivalMap from '../FestivalMap';
+import { FooterLayout } from '../../../../../Components';
 import { useLocation } from 'react-router-dom';
 // import SvgIcon from '@mui/material/SvgIcon';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -15,14 +17,6 @@ const FestivalDetailed = () => {
   // const festivals = useFestival();
   // const params = useParams();
   const location = useLocation();
-  // let temp = {};
-  // const [temp, setTemp] = useState({});
-
-  // useEffect(() => {
-  //   setTemp(festivals);
-  // }, []);
-
-  // console.log(temp);
 
   const data = location.state.festival;
   const { LAT, LNG } = data;
@@ -41,6 +35,24 @@ const FestivalDetailed = () => {
           <div className="info_container">
             <div className="sub_image_container">
               <img src={`${data.MAIN_IMG_THUMB}`}></img>
+      <div className="festival_detailed_main">
+        <img
+          src="https://bto.or.kr/attach/IMAGE/UserMenu/SubVisauImg/2019/12/djc4nutiLyNrsbDv.JPG"
+          style={{ width: '100%', height: '100%' }}
+          alt="busan"
+        />
+      </div>
+      <div className="detailed_body">
+        <div className="info_container">
+          <div className="sub_image_container">
+            <img src={`${data.MAIN_IMG_THUMB}`} alt="thumbnail" />
+          </div>
+          <div style={{ marginLeft: '60px' }}>
+            <div>
+              <h1>{data.PLACE}</h1>
+            </div>
+            <div>
+              <p>{data.SUBTITLE}</p>
             </div>
             <div style={{ marginLeft: '60px' }}>
               <div>

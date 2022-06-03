@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { getFestivalData } from '../../../../../api';
 
 const { kakao } = window;
 
 const MapContainer = () => {
   const festivals = getFestivalData();
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    setData(festivals);
-  }, []);
 
   useEffect(() => {
     const container = document.getElementById('map');
@@ -49,7 +44,7 @@ const MapContainer = () => {
     <div
       id="map"
       style={{
-        width: '100%',
+        maxWidth: '100%',
         height: '100%',
       }}
     ></div>

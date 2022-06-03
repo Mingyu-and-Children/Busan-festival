@@ -1,10 +1,6 @@
-import busanImage from './././././img/busanImage.jpg';
+// import React from 'react';
 
-function PhotoContainer() {
-  return (
-    <div>
-      <img srcSet={busanImage} alt="error" />
-    </div>
-  );
-}
-export default PhotoContainer;
+// function PhotoContainer() {
+//   return;
+// }
+// export default PhotoContainer;

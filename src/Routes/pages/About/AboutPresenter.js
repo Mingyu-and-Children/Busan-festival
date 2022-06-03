@@ -8,8 +8,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import styled from 'styled-components';
-import PhotoContainer from './components/photoContainer';
 import { FooterLayout } from '../../../Components';
+// import { PhotoContainer } from './Components';
+import busanImage from '../../../asset/busanImage.jpg';
 
 const BoxCotainer = styled.div`
   /* White */
@@ -66,7 +67,21 @@ export default function AboutPresenter() {
       <React.Fragment>
         <CssBaseline />
 
-        <PhotoContainer></PhotoContainer>
+        <div
+          style={{
+            width: '95vw',
+            height: '70vh',
+            margin: 'auto',
+            backgroundColor: '#eee',
+            marginBottom: '40px',
+          }}
+        >
+          <img
+            srcSet={busanImage}
+            alt="error"
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
         <Stack direction="row" spacing={2} justifyContent="center">
           <Avatar sx={{ bgcolor: amber[500] }}>MG</Avatar>
           <Avatar sx={{ bgcolor: blue[500] }}>HJ</Avatar>

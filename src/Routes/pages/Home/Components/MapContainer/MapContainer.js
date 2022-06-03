@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { getFestivalData } from '../../../../../api';
 
 const { kakao } = window;
 
 const MapContainer = () => {
   const festivals = getFestivalData();
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    setData(festivals);
-  }, []);
 
   useEffect(() => {
     const container = document.getElementById('map');

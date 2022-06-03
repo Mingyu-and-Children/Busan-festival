@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
 import { amber, blue, blueGrey, brown } from '@mui/material/colors';
 
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,7 +8,6 @@ import Container from '@mui/material/Container';
 
 import styled from 'styled-components';
 import { FooterLayout } from '../../../Components';
-// import { PhotoContainer } from './Components';
 import busanImage from '../../../asset/busanImage.jpg';
 
 const BoxCotainer = styled.div`
@@ -82,21 +80,15 @@ export default function AboutPresenter() {
             style={{ width: '100%', height: '100%' }}
           />
         </div>
-        <Stack direction="row" spacing={2} justifyContent="center">
-          <Avatar sx={{ bgcolor: amber[500] }}>MG</Avatar>
-          <Avatar sx={{ bgcolor: blue[500] }}>HJ</Avatar>
-          <Avatar sx={{ bgcolor: blueGrey[500] }}>UJ</Avatar>
-          <Avatar sx={{ bgcolor: brown[500] }}>HC</Avatar>
-        </Stack>
 
         <Container
           fixed
           sx={{
             display: 'flex',
-            flexWrap: 'wrap',
             justifyContent: 'space-around',
             marginTop: '100px',
-            width: '100vw',
+            marginBottom: '100px',
+            width: '100%',
           }}
         >
           <Box
@@ -108,13 +100,35 @@ export default function AboutPresenter() {
             }}
           >
             <BoxCotainer>
-              <div style={{ padding: '10px' }}>Title</div>
+              <div style={{ padding: '10px' }}>
+                <Avatar sx={{ bgcolor: amber[500] }}>MG</Avatar>
+              </div>
+              <BorderStyle />
+              <TextContainer>
+                <p>1. 다들 너무 고생하셨어요~</p>
+              </TextContainer>
+            </BoxCotainer>
+          </Box>
+          <Box
+            sx={{
+              bgcolor: '#eee',
+              width: '300px',
+              height: '300px',
+              margin: '10px',
+            }}
+          >
+            <BoxCotainer>
+              <div style={{ padding: '10px' }}>
+                <Avatar sx={{ bgcolor: blue[500] }}>HJ</Avatar>
+              </div>
               <BorderStyle />
               <TextContainer>
                 <p>
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo
-                  odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                  risus, porta ac consectetur ac, vestibulum at eros.
+                  1. 페스티벌 상세 페이지 내에서 props를 받아오지 못하는 문제 :
+                  페스티벌 페이지 Link 라우터 내에 state 전달, 자식 컴포넌트에서
+                  location 객체내 state를 받아오는 것으로 해결 <br /> <br />
+                  2. mui 모듈 : 모듈 사용 하기 전 패키지 미설치 문제로 뜨는 에러
+                  패키지 설치로 해결, 속성 등은 도큐먼트 참고
                 </p>
               </TextContainer>
             </BoxCotainer>
@@ -128,13 +142,15 @@ export default function AboutPresenter() {
             }}
           >
             <BoxCotainer>
-              <div style={{ padding: '10px' }}>Title</div>
+              <div style={{ padding: '10px' }}>
+                <Avatar sx={{ bgcolor: blueGrey[500] }}>UJ</Avatar>
+              </div>
               <BorderStyle />
               <TextContainer>
                 <p>
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo
-                  odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                  risus, porta ac consectetur ac, vestibulum at eros.
+                  1. 카카오맵 api : 축제 별로 maker를 표시, 지도가 줌아웃 될 때
+                  cluster를 생성을 하는 과정에서 api활용 <br />
+                  2. 피그마 UI 제작
                 </p>
               </TextContainer>
             </BoxCotainer>
@@ -148,13 +164,18 @@ export default function AboutPresenter() {
             }}
           >
             <BoxCotainer>
-              <div style={{ padding: '10px' }}>Title</div>
+              <div style={{ padding: '10px' }}>
+                <Avatar sx={{ bgcolor: brown[500] }}>HC</Avatar>
+              </div>
               <BorderStyle />
               <TextContainer>
                 <p>
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo
-                  odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                  risus, porta ac consectetur ac, vestibulum at eros.
+                  1. 부산 축제 공공데이터 api CORS 에러 : 교차브라우저 제한으로
+                  인한 에러로 http-proxy-middleware 설치 후 setupProxy.js 파일
+                  생성
+                  <br />
+                  <br />
+                  2. 헤더, 푸터 디자인 : 페이지 스크롤 생기면 헤더 고정(fixed)
                 </p>
               </TextContainer>
             </BoxCotainer>

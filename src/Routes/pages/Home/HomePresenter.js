@@ -4,7 +4,6 @@ import useFestival from '../../../Hooks/useFestival';
 
 const HomePresenter = () => {
   const festivals = useFestival();
-  console.log(festivals);
   return (
     <>
       <HomeLayout festivals={festivals} />

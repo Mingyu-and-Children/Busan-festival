@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import AutoSlide from '../AutoSlide';
 import MapContainer from '../MapContainer';
 import { FooterLayout } from '../../../../../Components';
+import FestivalList from '../FestivalList';
 
 const styles = (theme) => ({
   root: {
@@ -28,7 +29,9 @@ class GridData extends Component {
               </Paper>
             </Grid>
             <Grid item xs={6}>
-              <Paper className={classes.paper}></Paper>
+              <Paper className={classes.paper}>
+                <FestivalList />
+              </Paper>
             </Grid>
             <Grid item xs={6}>
               <Paper className={classes.paper}>

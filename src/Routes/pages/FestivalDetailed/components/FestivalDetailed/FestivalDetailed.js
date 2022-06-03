@@ -1,26 +1,26 @@
 import * as React from 'react';
 import './FestivalDetailed.css';
-// import useFestival from '../../../../../Hooks/useFestival';
-// import { useParams } from 'react-router-dom';
 import FestivalMap from '../FestivalMap';
 import { FooterLayout } from '../../../../../Components';
-// import { useEffect, useState } from 'react';
-import FestivalMap from '../FestivalMap';
-import { FooterLayout } from '../../../../../Components';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-// import SvgIcon from '@mui/material/SvgIcon';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import MouseIcon from '@mui/icons-material/Mouse';
 
 const FestivalDetailed = () => {
-  // const festivals = useFestival();
-  // const params = useParams();
   const location = useLocation();
-
   const data = location.state.festival;
   const { LAT, LNG } = data;
   console.log(data);
+  console.log(location);
+
+  // 상세페이지 이동 시 스크롤이 맨 위로 위치하지 않는 문제
+  // 아래 코드로 해결!
+  useEffect(() => {
+    console.log('in');
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -29,30 +29,13 @@ const FestivalDetailed = () => {
           <img
             src="https://bto.or.kr/attach/IMAGE/PopupMgr/PopupZoneUpload/2022/1/bddH6YtFbRc8xlSc.PNG"
             style={{ width: '100%', height: '100%' }}
+            alt="main-img"
           />
         </div>
         <div className="detailed_body">
           <div className="info_container">
             <div className="sub_image_container">
-              <img src={`${data.MAIN_IMG_THUMB}`}></img>
-      <div className="festival_detailed_main">
-        <img
-          src="https://bto.or.kr/attach/IMAGE/UserMenu/SubVisauImg/2019/12/djc4nutiLyNrsbDv.JPG"
-          style={{ width: '100%', height: '100%' }}
-          alt="busan"
-        />
-      </div>
-      <div className="detailed_body">
-        <div className="info_container">
-          <div className="sub_image_container">
-            <img src={`${data.MAIN_IMG_THUMB}`} alt="thumbnail" />
-          </div>
-          <div style={{ marginLeft: '60px' }}>
-            <div>
-              <h1>{data.PLACE}</h1>
-            </div>
-            <div>
-              <p>{data.SUBTITLE}</p>
+              <img src={`${data.MAIN_IMG_THUMB}`} alt="thumb" />
             </div>
             <div style={{ marginLeft: '60px' }}>
               <div>

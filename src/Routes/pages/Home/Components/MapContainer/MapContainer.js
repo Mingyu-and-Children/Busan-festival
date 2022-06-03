@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { getFestivalData } from '../../../../../api';
+import './MapContainer.css';
 
 const { kakao } = window;
 
@@ -40,15 +41,7 @@ const MapContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <div
-      id="map"
-      style={{
-        maxWidth: '100%',
-        height: '100%',
-      }}
-    ></div>
-  );
+  return <div id="map"></div>;
 };
 
 export default MapContainer;

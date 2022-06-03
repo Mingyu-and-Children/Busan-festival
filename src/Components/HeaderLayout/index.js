@@ -40,7 +40,7 @@ const HeaderLayout = () => {
                 to="/about"
                 className={`top_menu ${pathname === '/about' && 'active'}`}
               >
-                About
+                Issue
               </Link>
             </ul>
           </nav>

@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 .festival_detailed_main {
-  width: 100vw;
-  height: 50vh;
+  width: 95vw;
+  height: 60vh;
+  margin: 0 auto;
   background-color: #eee;
-  /* margin: 0 auto; */
-}
-
-.detailed_body {
-  margin: 0;
-  padding: 0;
 }
 
 .info_container {
-  height: 36.7vh;
+  /* height: 36.7vh; */
   margin: 20px;
   display: flex;
   justify-content: center;
@@ -22,13 +17,13 @@
 
 .sub_image_container {
   width: 350px;
-  height: 350px;
-  background-color: #999;
+  height: auto;
+  /* background-color: #999; */
 }
 
 .sub_image_container img {
   width: 350px;
-  height: 350px;
+  height: auto;
 }
 
 .sub_info_container {
@@ -67,6 +62,17 @@
 .footer_container .find_way_items {
   width: 450px;
   height: 450px;
-  background-color: #999;
+  /* background-color: #999; */
   margin-left: 70px;
+}
+
+.footer_container .find_way_items .icon_box {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.footer_container .find_way_items .icon_box .icon_item {
+  margin-right: 10px;
 }

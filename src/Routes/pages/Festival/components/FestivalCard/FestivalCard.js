@@ -14,7 +14,7 @@ const FestivalCard = () => {
   // console.log(festivals);
   return (
     <>
-      <div>
+      <div className="festival_card_main">
         <img
           src="https://bto.or.kr/attach/IMAGE/PopupMgr/PopupZoneUpload/2022/1/bddH6YtFbRc8xlSc.PNG"
           style={{ width: '100%', height: '100%' }}
@@ -36,15 +36,15 @@ const FestivalCard = () => {
           >
             <Card
               sx={{
-                width: 300,
-                height: 300,
+                width: 350,
+                height: 350,
                 margin: '10px',
               }}
             >
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="217"
+                  height="267"
                   image={festival.MAIN_IMG_THUMB}
                   alt="green iguana"
                 />

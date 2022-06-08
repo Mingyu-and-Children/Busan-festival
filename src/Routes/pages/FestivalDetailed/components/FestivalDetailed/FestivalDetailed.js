@@ -4,16 +4,14 @@ import FestivalMap from '../FestivalMap';
 import { FooterLayout } from '../../../../../Components';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
-import MouseIcon from '@mui/icons-material/Mouse';
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
+// import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+// import MouseIcon from '@mui/icons-material/Mouse';
 
 const FestivalDetailed = () => {
   const location = useLocation();
   const data = location.state.festival;
   const { LAT, LNG } = data;
-  console.log(data);
-  console.log(location);
 
   // 상세페이지 이동 시 스크롤이 맨 위로 위치하지 않는 문제
   // 아래 코드로 해결!
@@ -71,16 +69,16 @@ const FestivalDetailed = () => {
             <div className="find_way_items">
               <div className="icon_box">
                 <div className="icon_item">
-                  <LocationOnIcon fontSize="large" sx={{ color: '#0050a0' }} />
+                  {/* <LocationOnIcon fontSize="large" sx={{ color: '#0050a0' }} /> */}
                 </div>
                 <div>{data.GUGUN_NM}</div>
               </div>
               <div className="icon_box">
                 <div className="icon_item">
-                  <AccessibilityNewIcon
+                  {/* <AccessibilityNewIcon
                     fontSize="large"
                     sx={{ color: '#0593d2' }}
-                  />
+                  /> */}
                 </div>
                 <div>
                   {data.MIDDLE_SIZE_RM1
@@ -90,7 +88,7 @@ const FestivalDetailed = () => {
               </div>
               <div className="icon_box">
                 <div className="icon_item">
-                  <MouseIcon fontSize="large" sx={{ color: '#0593d2' }} />
+                  {/* <MouseIcon fontSize="large" sx={{ color: '#0593d2' }} /> */}
                 </div>
                 <div>
                   {data.HOMEPAGE_URL ? (
